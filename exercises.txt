@@ -1,0 +1,94 @@
+___________________________________________________________
+Exercise 1
+
+Complete Set-up - Install dependencies
+1. Copy your .env file from Lesson 02 and paste it into the backend folder
+2. React dependencies
+   Open a terminal from the frontend folder, run this command:
+   npm install
+   Kill the terminal
+3. Server dependencies
+   Open a terminal from the backend folder, run this command:
+   npm install
+
+Start the Server, run /backend/index.js
+4. Make sure your terminal is pointed to the backend folder, run this command: 
+   node index
+   Keep this terminal open, we'll start React later
+
+___________________________________________________________
+Exercise 2
+
+In ./frontend/src/components/Message.js, we will create our Message component. 
+
+1. In ./frontend/src/components/Message.js:
+   Import React using ES6 (frontend) syntax:
+   import React from 'react';
+
+2. Import Message.css:
+   import './Message.css'
+
+3. Create a function named Message()
+4. Inside Message(), return the following component HTML:
+( 
+   <div className="message">
+ 		<h4>MESSAGE</h4>
+		<div class="meta">
+  			<p>USER &nbsp; DATE</p>
+		</div>
+   </div>
+ )
+
+5. Outside the function, export Message
+6. Start React
+   Open a new terminal from the 'frontend' folder
+   run this command:
+   npm start
+   A browser window should open automatically.
+
+
+___________________________________________________________
+Exercise 3
+Setting up the Message component with Props.
+In ./frontend/src/components/Message.js, in the Message function:
+1. Add a parameter to the function: props
+2. In the h4 tag, replace MESSAGE with props.message
+3. In the p tag, replace USER with props.user, and DATE with props.date
+Don't forget the { } variable syntax!
+
+___________________________________________________________
+Exercise 4
+
+In App.js, we need to send each message's data into each
+corresponding Message component being rendered. The render
+code for our Message components is already partially
+implemented by using the Array's "map" method to convert
+the data we received from the database directly into HTML
+(i.e., JSX) code.
+
+However, only two props are being sent into each Message
+component so far. You will need to send the following
+three pieces of data into each Message component as props:
+
+- message
+- user
+- date
+
+NOTE: These pieces of data live inside the "map" method's
+"message" parameter.
+
+In ./frontend/src/App.js, inside <Message />:
+1. Set the value of the message prop to: 
+{message.message}
+2. Set the values of user and date accordingly.
+
+Look at your React website again! All of your messages
+should now have unique data rendered in each component.
+
+___________________________________________________________
+Practice Session
+
+Add a unique id to each message.
+1. Examine <Message /> in App.css, which prop value will provide a unique id from the database?
+2. Edit ./frontend/src/components/Message.js
+   Add an id prop to the component and use the props parameter to give it a value.
