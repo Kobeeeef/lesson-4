@@ -23,43 +23,43 @@ function App() {
   }
 
   getMessages("false");
-  
+
   return (
-    <>
-      <header>
-        <nav id="branding">
-          <img id="logo" src={LogoImage} alt="Secret Messages App" />
-          <h1 id="title">Secret Messages</h1>
-        </nav>
-      </header>
-      <div id="main">
-        <section id="messages">
-          <button
-            id="show-secret"
-            onClick={()=>getMessages("true")}
-          >
-            Show secret messages
-          </button>
-          <div className="messages-container">
-            {
-              messages.map(
-                (message) =>
-                  <Message 
-                    key={`Message${message._id}`}
-                    _id={message._id}
-
-                    // EXERCISE 4
-
-                  />
-              )
-            }
-          </div>
-        </section>
-      </div>
-      <footer>
-        <p>&copy; 2024 Secret Messages</p>
-      </footer>
-    </>
+      <>
+        <header>
+          <nav id="branding">
+            <img id="logo" src={LogoImage} alt="Secret Messages App" />
+            <h1 id="title">Secret Messages</h1>
+          </nav>
+        </header>
+        <div id="main">
+          <section id="messages">
+            <button
+                id="show-secret"
+                onClick={()=>getMessages("true")}
+            >
+              Show secret messages
+            </button>
+            <div className="messages-container">
+              {
+                messages.map(
+                    (message) =>
+                        <Message
+                            key={`Message${message._id}`}
+                            _id={message._id}
+                            message={message.message}
+                            user={message.user}
+                            date={message.date}
+                        />
+                )
+              }
+            </div>
+          </section>
+        </div>
+        <footer>
+          <p>&copy; 2024 Secret Messages</p>
+        </footer>
+      </>
   );
 }
 
